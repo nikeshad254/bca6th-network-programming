@@ -3,7 +3,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
-// Lab 6: Basic File Downloader
+/**
+ * Lab 6: Basic File Downloader
+ * A program to download an object specified by URL
+ */
+
 public class FileDownloader {
 
     public static void main(String[] args) throws IOException {

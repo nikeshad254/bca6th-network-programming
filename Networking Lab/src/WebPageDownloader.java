@@ -4,7 +4,12 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 
-// Lab 5: Basic Web Page Downloader
+/**
+ * Lab 5: Basic Web Page Downloader
+ * Write a program to download a web page using the URL of the web  page.
+ * Use the openStream and InputStreamReader’s read() method.
+ */
+
 public class WebPageDownloader {
 
     public static void main(String[] args) throws IOException {
