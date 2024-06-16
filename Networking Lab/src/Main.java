@@ -8,6 +8,7 @@ public class Main {
         System.out.println("Lab 4: Hostname Comparison and Hash Code Generation");
         System.out.println("Lab 5: Basic Web Page Downloader");
         System.out.println("Lab 6: Basic File Downloader");
+        System.out.println("Lab 7: URL Splitter with User Input");
 
     }
 }
