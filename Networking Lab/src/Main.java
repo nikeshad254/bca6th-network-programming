@@ -10,6 +10,7 @@ public class Main {
         System.out.println("Lab 6: Basic File Downloader");
         System.out.println("Lab 7: URL Splitter with User Input");
         System.out.println("Lab 8: URL Equality Checker");
+        System.out.println("Lab 9: URI Analyzer");
 
     }
 }
