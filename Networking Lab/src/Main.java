@@ -13,6 +13,7 @@ public class Main {
         System.out.println("Lab 9: URI Analyzer");
         System.out.println("Lab 10: URL Encoding Punctuation and Google Search Query");
         System.out.println("Lab 11: Cookie Manager with Adding, Getting, and Removing Cookies");
+        System.out.println("Lab 12: URL Connection Details");
 
     }
 }
