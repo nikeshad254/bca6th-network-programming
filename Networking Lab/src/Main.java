@@ -15,6 +15,7 @@ public class Main {
         System.out.println("Lab 11: Cookie Manager with Adding, Getting, and Removing Cookies");
         System.out.println("Lab 12: URL Connection Details");
         System.out.println("Lab 13: URL Connection Read Data");
+        System.out.println("Lab 14: URL Connection Headers");
 
     }
 }
