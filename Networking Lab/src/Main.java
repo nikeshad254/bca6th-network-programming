@@ -12,6 +12,7 @@ public class Main {
         System.out.println("Lab 8: URL Equality Checker");
         System.out.println("Lab 9: URI Analyzer");
         System.out.println("Lab 10: URL Encoding Punctuation and Google Search Query");
+        System.out.println("Lab 11: Cookie Manager with Adding, Getting, and Removing Cookies");
 
     }
 }
