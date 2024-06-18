@@ -62,6 +62,34 @@ public class Chapter6 {
 
 //            Socket socket1 = new Socket(InetAddress.getByName("www.google.com"), 90);
 
+            // Socket Options
+            socket.setTcpNoDelay(true); // have no delay
+            socket.setSoLinger(true, 50); // if socket is closed what to do with datagram [true, time till data is send]
+            socket.setSoTimeout(3600); // doesnt disconnect socket for certain time
+            socket.setReceiveBufferSize(1000);
+            socket.setSendBufferSize(1000);
+            socket.setKeepAlive(true);
+//            socket.sendUrgentData(10); // with below
+            socket.setOOBInline(true); // send urgent data while other data is being transfer
+            socket.setReuseAddress(true); // allow use of single port by multiple sockets
+            socket.setTrafficClass(120); // performance based on services
+
+
+            System.out.println("Tcp No Delay: "+ socket.getTcpNoDelay());
+            System.out.println("So Linger: "+ socket.getSoLinger()); // max time: 65535 s
+            System.out.println("So Timeout: "+ socket.getSoTimeout()); // 0 = infinite
+            System.out.println("Receive Buffer size: "+ socket.getReceiveBufferSize());
+            System.out.println("Send buffer size: "+ socket.getSendBufferSize());
+            System.out.println("Get Keep Alive: "+ socket.getKeepAlive()); // 11 minutes
+            System.out.println("OOB In Line: "+ socket.getOOBInline());
+            System.out.println("Reuse Address: "+ socket.getReuseAddress());
+            System.out.println("Traffic Class: "+ socket.getTrafficClass());
+
+
+
+            socket.close();
+            System.out.println("Is Connection Open: "+ socket.isConnected());
+
 
         } catch (IOException e) {
             throw new RuntimeException(e);
