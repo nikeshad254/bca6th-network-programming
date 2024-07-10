@@ -21,10 +21,21 @@ public class Chapter9 {
             byteBuffer.flip();
             output.write(byteBuffer);
             byteBuffer.clear();
+
+            System.out.println("Buffer Position: "+ byteBuffer.position());
+            byteBuffer.position(25);
+
+            System.out.println("Buffer Capacity: "+ byteBuffer.capacity());
+
+            byteBuffer.limit(50);
+            System.out.println("Buffer Limit: "+ byteBuffer.limit());
+
+            System.out.println("Buffer Mark: "+ byteBuffer.mark());
+
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
 
         // Server example of Non Blocking IO
         ServerSocketChannel serverChannel = null;
@@ -38,6 +49,8 @@ public class Chapter9 {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+
 
     }
 }
