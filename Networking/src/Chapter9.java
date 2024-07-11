@@ -3,6 +3,9 @@ import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.SocketAddress;
 import java.nio.ByteBuffer;
+import java.nio.CharBuffer;
+import java.nio.DoubleBuffer;
+import java.nio.IntBuffer;
 import java.nio.channels.Channels;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
@@ -15,7 +18,7 @@ public class Chapter9 {
         SocketAddress socketAddress = new InetSocketAddress("www.google.com", 13);
         try {
             SocketChannel socketChannel = SocketChannel.open(socketAddress); // Blocking IO
-            ByteBuffer byteBuffer = ByteBuffer.allocate(1024); // Buffer size set
+            ByteBuffer byteBuffer = ByteBuffer.allocateDirect(1024); // only on bytebuffer
              int socketRead = socketChannel.read(byteBuffer);
             WritableByteChannel output = Channels.newChannel(System.out);
             byteBuffer.flip();
@@ -32,6 +35,27 @@ public class Chapter9 {
 
             System.out.println("Buffer Mark: "+ byteBuffer.mark());
 
+
+            // methods
+            byteBuffer.clear(); // position = 0, limit = capacity
+            byteBuffer.flip(); // limit = current position, position = 0
+            byteBuffer.rewind(); // position = 0, limit = unchanged
+            System.out.println("no of remaining: "+ byteBuffer.remaining()); // currentPos to limit
+            System.out.println("is Remaining: "+ byteBuffer.hasRemaining()); // if currentPos to limit > 1
+
+
+            // Buffer Allocation capacity
+            CharBuffer charBuffer = CharBuffer.allocate(300);
+            IntBuffer intBuffer = IntBuffer.allocate(200);
+            DoubleBuffer doubleBuffer = DoubleBuffer.allocate(300);
+
+            byte[] byteData = byteBuffer.array(); // Unsupported exception when using allocationDirect
+            char[] charData = charBuffer.array();
+            int[] intData = intBuffer.array();
+            double[] doubleData = doubleBuffer.array();
+
+            char[] texts = "Some Char.".toCharArray();
+            CharBuffer charBuffer1 = CharBuffer.wrap(texts);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
