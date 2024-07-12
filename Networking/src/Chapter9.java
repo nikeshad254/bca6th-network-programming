@@ -13,7 +13,7 @@ import java.nio.channels.WritableByteChannel;
 
 public class Chapter9 {
     public static void main(String[] args) {
-
+        /*
         // Client example of non blocking IO
         SocketAddress socketAddress = new InetSocketAddress("www.google.com", 13);
         try {
@@ -74,7 +74,27 @@ public class Chapter9 {
             throw new RuntimeException(e);
         }
 
+         */
 
+        try{
+            CharBuffer charBuffer = CharBuffer.allocate(10);
+            charBuffer.put('a'); // to place data in the buffer
+            charBuffer.put('b');
+
+            System.out.println("postition: "+ charBuffer.position());
+            System.out.println("buffer at position: "+ charBuffer.get(charBuffer.position()));
+
+            charBuffer.flip();
+            charBuffer.put('c');
+            charBuffer.put('d');
+            System.out.println("\nAfter Flipping:-");
+            System.out.println("position: "+ charBuffer.position());
+            System.out.println("buffer at position: "+ charBuffer.get(charBuffer.position() - 1 ));
+            System.out.println("buffer at position: "+ charBuffer.get(0));
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
 
     }
 }
