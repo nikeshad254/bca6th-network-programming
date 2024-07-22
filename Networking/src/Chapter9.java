@@ -76,6 +76,7 @@ public class Chapter9 {
 
          */
 
+        /*
         try{
             CharBuffer charBuffer = CharBuffer.allocate(10);
             charBuffer.put('a'); // to place data in the buffer
@@ -95,6 +96,28 @@ public class Chapter9 {
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
+
+         */
+
+    try{
+        byte[] bytes = "Some text here".getBytes();
+        ByteBuffer byteBuffer = ByteBuffer.allocate(bytes.length);
+        byteBuffer.put(bytes, 0, 10);
+        byte[] newBytes = new byte[bytes.length];
+        byteBuffer.get(newBytes, 0, 10);
+//        System.out.println((char) newBytes[0]);
+
+        System.out.println(byteBuffer.getChar(0));
+        byteBuffer.putChar('a');
+        System.out.println(byteBuffer.getDouble());
+
+        CharBuffer charBuffer = byteBuffer.asCharBuffer();
+        IntBuffer intBuffer = byteBuffer.asIntBuffer();
+        DoubleBuffer doubleBuffer = byteBuffer.asDoubleBuffer();
+    }catch(Exception e){
+        System.out.println("Error: "+ e.getMessage());
+        e.printStackTrace();
+    }
 
     }
 }
