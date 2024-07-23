@@ -114,6 +114,32 @@ public class Chapter9 {
         CharBuffer charBuffer = byteBuffer.asCharBuffer();
         IntBuffer intBuffer = byteBuffer.asIntBuffer();
         DoubleBuffer doubleBuffer = byteBuffer.asDoubleBuffer();
+        doubleBuffer.put(10);
+
+        // duplicating
+        DoubleBuffer newDoubleBuffer = doubleBuffer.duplicate();
+        System.out.println("Double buffer data: "+ newDoubleBuffer.get(0));
+        System.out.println("Buff equals?: "+ doubleBuffer.equals(newDoubleBuffer));
+        System.out.println("Buff HashCode?: "+ doubleBuffer.hashCode());
+        System.out.println("Buff HashCode?: "+ newDoubleBuffer.hashCode());
+        System.out.println("Buff String?: "+ newDoubleBuffer.toString());
+
+        doubleBuffer.put(20);
+        doubleBuffer.put(30);
+        doubleBuffer.put(40);
+        doubleBuffer.put(50);
+        doubleBuffer.put(60);
+        doubleBuffer.put(70);
+
+        doubleBuffer.position(4);
+        // slicing: slice from current pos to the limit
+        DoubleBuffer sliceDoubleBuffer = doubleBuffer.slice();
+        System.out.println(sliceDoubleBuffer.get(0));
+        System.out.println(sliceDoubleBuffer.get(1));
+        System.out.println(sliceDoubleBuffer.get(2));
+        System.out.println(sliceDoubleBuffer.get(3));
+
+
     }catch(Exception e){
         System.out.println("Error: "+ e.getMessage());
         e.printStackTrace();
