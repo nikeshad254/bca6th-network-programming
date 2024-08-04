@@ -19,6 +19,7 @@ public class Main {
         System.out.println("Lab 15: URLConnection Configuration");
         System.out.println("Lab 16: Sending HTTP Requests with Different Methods");
         System.out.println("Lab 17: Handling HTTP Response");
+        System.out.println("Lab 18: Client Application with Socket Options");
 
     }
 }
