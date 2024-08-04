@@ -2,6 +2,18 @@ import javax.net.ssl.*;
 import java.io.*;
 import java.security.KeyStore;
 
+/**
+ * -- Generate a key pair --
+ * keytool -genkeypair -alias server -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore server.p12 -validity 365
+ *
+ * -- Exporting the Certificate --
+ * keytool -export -alias server -file server. crt -keystore server. p12
+ *
+ * -- Importing the Certificate into a Truststore --
+ * keytool -import -alias server -file server. crt -keystore truststore. p12
+ *
+ */
+
 public class SimpleSSLServer {
     public static void main(String[] args) throws Exception {
         // Load server keystore
