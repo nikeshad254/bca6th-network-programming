@@ -21,6 +21,7 @@ public class Main {
         System.out.println("Lab 17: Handling HTTP Response");
         System.out.println("Lab 18: Client Application with Socket Options");
         System.out.println("Lab 19: Server Application with Socket Options");
+        System.out.println("Lab 20: Secure SSL Client-Server Application");
 
     }
 }
