@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.net.*;
+import java.nio.channels.DatagramChannel;
 
 public class Chapter10 {
     public static void main(String[] args) {
@@ -43,6 +44,18 @@ public class Chapter10 {
             // datagramSocket3.send(new DatagramPacket());
             // RECIEVE
             datagramSocket3.close();
+
+
+            DatagramChannel datagramChannel = DatagramChannel.open();
+            DatagramSocket datagramSocket4 = datagramChannel.socket();
+            datagramSocket4.bind(new InetSocketAddress(0));
+
+            DatagramPacket request1 = new DatagramPacket(new byte[1], 1, InetAddress.getByName("localhost"), 13);
+            datagramSocket4.send(request1);
+
+            DatagramPacket response1 = new DatagramPacket(new byte[1024], 1024);
+            datagramSocket4.receive(response1);
+
         } catch (SocketException e) {
             throw new RuntimeException(e);
         } catch (UnknownHostException e) {
