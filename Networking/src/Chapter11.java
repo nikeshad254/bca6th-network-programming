@@ -1,7 +1,5 @@
 import java.io.IOException;
-import java.net.DatagramPacket;
-import java.net.InetAddress;
-import java.net.MulticastSocket;
+import java.net.*;
 
 public class Chapter11 {
     public static void main(String[] args) {
@@ -17,6 +15,11 @@ public class Chapter11 {
 
             multicastSocket.leaveGroup(inetAddress);
             multicastSocket.close();
+
+            // constructor
+            SocketAddress address = new InetSocketAddress("192.168.254.32", 4000);
+            MulticastSocket multicastSocket1 = new MulticastSocket(address);
+
 
         } catch (IOException e) {
             throw new RuntimeException(e);
