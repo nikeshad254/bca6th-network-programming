@@ -25,6 +25,7 @@ public class Main {
         System.out.println("Lab 21: Simplified Non-blocking I/O");
         System.out.println("Lab 22: UDP Client Example");
         System.out.println("Lab 23: UDP Server Example");
+        System.out.println("Lab 24: Multicast Receiver");
 
     }
 }
